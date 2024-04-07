@@ -13,7 +13,7 @@ const AppLayout = () => {
 		<div className="bg-dark">
 			<Navbar expand="lg" >
 					<Navbar.Brand href="#" >
-                        <img src="https://i.namu.wiki/i/9KczwJHhnxkftXfDtyw6B_cXpY88DOMK7oenjJm2P7dafseUmCZOJQUhEya_AsiqIIYQXNWcIV9eEnAl1xhFDA.svg" className="netflixLogo"/></Navbar.Brand>
+                        <img src="https://play-lh.googleusercontent.com/TBRwjS_qfJCSj1m7zZB93FnpJM5fSpMA_wUlFDLxWAb45T9RmwBvQd5cWR5viJJOhkI" className="netflixLogo"/></Navbar.Brand>
 					<Navbar.Toggle aria-controls="navbarScroll" />
 					<Navbar.Collapse id="navbarScroll">
 						<Nav
