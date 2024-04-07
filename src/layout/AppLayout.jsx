@@ -10,11 +10,10 @@ import "./AppLayout.css"
 
 const AppLayout = () => {
 	return (
-		<div className="container">
-			<Navbar expand="lg" className="bg-body-dark">
-				<Container  bg="dark" data-bs-theme="dark"  className="navBar" fluid>
+		<div className="bg-dark">
+			<Navbar expand="lg" >
 					<Navbar.Brand href="#" >
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" className="netflixLogo"/></Navbar.Brand>
+                        <img src="https://i.namu.wiki/i/9KczwJHhnxkftXfDtyw6B_cXpY88DOMK7oenjJm2P7dafseUmCZOJQUhEya_AsiqIIYQXNWcIV9eEnAl1xhFDA.svg" className="netflixLogo"/></Navbar.Brand>
 					<Navbar.Toggle aria-controls="navbarScroll" />
 					<Navbar.Collapse id="navbarScroll">
 						<Nav
@@ -33,7 +32,6 @@ const AppLayout = () => {
 							<Button variant="outline-danger">Search</Button>
 						</Form>
 					</Navbar.Collapse>
-				</Container>
 			</Navbar>
             <Outlet></Outlet>
 		</div>
