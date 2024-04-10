@@ -1,12 +1,19 @@
 .carousel-container {
     overflow: hidden;
-    height: 440px;
+    height: 400px; /* 더 작은 값으로 조정 */
 }
 
-@media (max-width:480px) {
+@media (max-width: 480px) {
     .carousel-container {
-        height: 330px;
-        display: flex;
-        justify-content: space-between;
+        height: 300px; /* 모바일 화면에 대한 조정 */
     }
+}
+
+.sliderTitle {
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 100px;
+}
+.movieCard {
+    border-radius: 15px;
+    overflow: hidden;
 }

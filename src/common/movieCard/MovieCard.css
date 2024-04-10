@@ -14,7 +14,7 @@
     /* ^ 투명도가 0이라는거 글씨 사라짐 */
     transition: all 1s;
     color: white;
-    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
     overflow-wrap: break-word;
     padding: 30px;
 }

@@ -1,14 +1,24 @@
-import React from "react"
+import React, { useState } from "react"
 import Button from "react-bootstrap/Button"
 import Container from "react-bootstrap/Container"
 import Form from "react-bootstrap/Form"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
 import NavDropdown from "react-bootstrap/NavDropdown"
+import { Link, useNavigate } from "react-router-dom"
 import { Outlet } from "react-router-dom"
 import "./AppLayout.css"
 
+
 const AppLayout = () => {
+	const [keyword, setKeyword] = useState("")
+	const navigate = useNavigate()
+
+	const searchByKeyword = (event)=> {
+		event.preventDefault()
+		navigate(`/movies?q=${keyword}`)
+		setKeyword("")
+	}
 	return (
 		<div className="bg-dark">
 			<Navbar expand="lg" >
@@ -20,15 +30,18 @@ const AppLayout = () => {
 							className="me-auto my-2 my-lg-0"
 							style={{ maxHeight: "100px" }}
 							navbarScroll>
-							<Nav.Link href="#action1" className="text-white">Home</Nav.Link>
-							<Nav.Link href="#action2" className="text-white">Movies</Nav.Link>
+							<Nav><Link to="/" className="text-white">Home </Link></Nav>
+							<Nav><Link to="/movies" className="text-white"> Movies</Link></Nav>
 						</Nav>
-						<Form className="d-flex">
+						<Form className="d-flex" onSubmit={searchByKeyword}>
 							<Form.Control
 								type="search"
 								placeholder="Search"
 								className="me-2"
-								aria-label="Search"/>
+								aria-label="Search"
+								value={keyword}
+								onChange={(event)=> setKeyword(event.target.value)}
+								/>
 							<Button variant="outline-danger">Search</Button>
 						</Form>
 					</Navbar.Collapse>
