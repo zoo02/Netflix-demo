@@ -67,26 +67,26 @@ const Movies = () => {
 	}
 
 	return (
-		<div>
-			<Row>
+		<Container className="mt-5">
+			<Row className="justify-content-center">
 				<Col lg={4} xs={12} className="d-flex justify-content-center">
 					<div className="SortButton">
 						<Button
 							className="m-1"
 							variant={sortType === "popular" ? "danger" : "secondary"}
-							onClick={handleSortPopularRank}
-						>
-							인기순
+							onClick={handleSortPopularRank}>
+							Popularity
 						</Button>
 						<Button
 							className="m-1"
 							variant={sortType === "recent" ? "danger" : "secondary"}
-							onClick={handleSortRecentRank}
-						>
-							최신순
+							onClick={handleSortRecentRank}>
+							Latest
 						</Button>
 					</div>
 				</Col>
+			</Row>
+			<Row className="justify-content-center">
 				<Col lg={8} xs={12}>
 					<Row>
 						{sortedData()?.map((movie, index) => (
@@ -118,7 +118,7 @@ const Movies = () => {
 					/>
 				</Col>
 			</Row>
-		</div>
+		</Container>
 	)
 }
 

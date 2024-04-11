@@ -20,8 +20,19 @@
     justify-content: center;
     height: 100%;
     padding: 2rem;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .banner-text-area > * {
     z-index: 2;
 }
+
+@media (max-width: 768px) {
+    .banner-text-area p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  
+

@@ -24,11 +24,10 @@ const Banner = () => {
 					`https://media.themoviedb.org/t/p/w1920_and_h600_bestv2${data.results[0].poster_path}` +
 					")",
 			}}
-			className="banner"
-		>
-			<div className="text-white banner-text-area">
-				<h1>{data?.results[0].title}</h1>
-				<p>{data?.results[0].overview}</p>
+			className="banner">
+			<div className="text-white banner-text-area" >
+				<h1 style={{color: "black"}}>{data?.results[0].title}</h1>
+				<p style={{color: "black"}}>{data?.results[0].overview}</p>
 			</div>
 		</div>
 	)
