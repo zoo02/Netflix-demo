@@ -15,7 +15,7 @@ const TopRatedMovieSlide = () => {
 	}
 	return (
 		<div style={{margin:"30px"}}>
-			<MovieSlider title="Top Rated Movies" movies={data.results} responsive={responsive} />
+			<MovieSlider title="Top Rated Movie" movies={data.results} responsive={responsive} />
 		</div>
 	)
 }

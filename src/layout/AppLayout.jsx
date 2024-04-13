@@ -4,7 +4,6 @@ import Container from "react-bootstrap/Container"
 import Form from "react-bootstrap/Form"
 import Nav from "react-bootstrap/Nav"
 import Navbar from "react-bootstrap/Navbar"
-import NavDropdown from "react-bootstrap/NavDropdown"
 import { Link, useNavigate } from "react-router-dom"
 import { Outlet } from "react-router-dom"
 import "./AppLayout.css"
@@ -29,18 +28,18 @@ const AppLayout = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link as={Link} to="/" className="text-white">Home </Nav.Link>
-                        <Nav.Link as={Link} to="/movies" className="text-white"> Movies</Nav.Link>
+                        <Nav.Link as={Link} to="/" className="text-white">HOME </Nav.Link>
+                        <Nav.Link as={Link} to="/movies" className="text-white"> MOVIE</Nav.Link>
                     </Nav>
                     <Form className="d-flex" onSubmit={searchByKeyword}>
                         <Form.Control
                             type="search"
-                            placeholder="Search"
+                            placeholder="SEARCH"
                             className="me-2"
                             aria-label="Search"
                             value={keyword}
                             onChange={(event) => setKeyword(event.target.value)}/>
-                        <Button variant="outline-danger" type="submit">Search</Button>
+                        <Button variant="outline-danger" type="submit">SEARCH</Button>
                     </Form>
                 </Navbar.Collapse>
             </Navbar>

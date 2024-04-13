@@ -1,11 +1,15 @@
 import React from "react"
 import Badge from "react-bootstrap/Badge"
 import { FaStar } from "react-icons/fa"
+import { Link, useNavigate } from "react-router-dom"
 import "./MovieCard.css"
 import { useMovieGenreQuery } from "../../hooks/useMovieGenre"
 
-const MovieCard = ({ movie }) => {
+
+
+const MovieCard = ({ movie, starsRenderer, ratingIconRenderer  }) => {
     const { data: genreData } = useMovieGenreQuery()
+    const navigate = useNavigate()
     const showGenre = (genreIdList)=> {
         if (!genreData) return []
         const genreNameList = genreIdList.map((id)=>{
@@ -13,6 +17,10 @@ const MovieCard = ({ movie }) => {
             return genreObj.name
         })
         return genreNameList
+    }
+
+    const goToMovieDetail = ()=> {
+        navigate(`/movies/${movie?movie.id:''}`)
     }
 
     const renderStars = () => {
@@ -49,12 +57,13 @@ const MovieCard = ({ movie }) => {
     }
 
     return (
-        <div
+        <button
+            type="button"
+            onClick={goToMovieDetail}
             style={{
                 backgroundImage: `url(https://image.tmdb.org/t/p/w600_and_h900_bestv2${movie.poster_path})`,
             }}
-            className="movieCard"
-        >
+            className="movieCard">
             <div className="overLay">
                 <h1>{movie.title}</h1>
                 {showGenre(movie.genre_ids).map(id => (
@@ -65,7 +74,7 @@ const MovieCard = ({ movie }) => {
                 <div className="starRating">{renderStars()}</div>
                 <div>{renderRatingIcon()}</div>
             </div>
-        </div>
+        </button>
     )
 }
 
